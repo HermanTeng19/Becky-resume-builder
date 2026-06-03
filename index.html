@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Becky Qi | BI Developer & Data Engineer Portfolio</title>
+  <meta name="description" content="Becky Qi | BI Developer & Data Engineer Portfolio showcasing automated cloud pipelines, database tuning, and interactive dashboards.">
   <!-- Google Font Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- Tailwind CSS CDN -->
@@ -28,7 +29,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-slate-50 text-slate-900 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-6xl mx-auto">
+  <div class="max-w-6xl mx-auto animate-fade-in">
     
     <!-- Top Navbar Navigation -->
     <nav class="flex justify-between items-center mb-8 bg-white border border-slate-200 py-3 px-6 rounded-2xl shadow-sm">
@@ -42,7 +43,7 @@
     </nav>
 
     <!-- Bento Box Main Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <main class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
       
       <!-- CARD 1: HERO/PROFILE (col-span-1 md:col-span-2 lg:col-span-3, row-span-2) -->
       <div class="bento-card p-6 lg:p-8 col-span-1 md:col-span-2 lg:col-span-3 flex flex-col justify-between min-h-[300px]">
@@ -119,8 +120,8 @@
         </div>
       </div>
 
-      <!-- CARD 4: EDUCATION & CERTIFICATIONS (col-span-1 md:col-span-2) -->
-      <div class="bento-card p-6 col-span-1 md:col-span-2 flex flex-col justify-between">
+      <!-- CARD 4: EDUCATION & CERTIFICATIONS (col-span-1 md:col-span-1) -->
+      <div class="bento-card p-6 col-span-1 md:col-span-1 flex flex-col justify-between">
         <div>
           <h2 class="text-base font-bold text-slate-900 mb-4 tracking-tight flex items-center">
             <span class="w-2.5 h-2.5 bg-sky-600 rounded-full mr-2"></span>
@@ -205,33 +206,38 @@
         </div>
       </div>
 
-      <!-- CARD 6: PROJECTS SPOTLIGHT (col-span-1 md:col-span-2, row-span-2) -->
-      <div class="bento-card p-6 col-span-1 md:col-span-2 flex flex-col justify-between min-h-[300px]">
+      <!-- CARD 6: PROJECTS SPOTLIGHT (col-span-1 md:col-span-1, row-span-2) -->
+      <div class="bento-card p-6 col-span-1 md:col-span-1 flex flex-col justify-between min-h-[300px]">
         <div>
           <h2 class="text-base font-bold text-slate-900 mb-4 tracking-tight flex items-center">
             <span class="w-2.5 h-2.5 bg-sky-600 rounded-full mr-2"></span>
             Featured Project Spotlight
           </h2>
           <div class="flex border-b border-slate-200 mb-4 overflow-x-auto pb-1">
-            <button data-project="audit" class="project-tab text-xs font-bold py-2 px-3 border-b-2 border-transparent transition-all whitespace-nowrap">
+            <button data-project="audit" class="project-tab text-xs font-bold py-2 px-3 border-b-2 border-sky-600 text-sky-600 transition-all whitespace-nowrap">
               Audit Pipeline
             </button>
-            <button data-project="aiHub" class="project-tab text-xs font-bold py-2 px-3 border-b-2 border-transparent transition-all whitespace-nowrap">
+            <button data-project="aiHub" class="project-tab text-xs font-bold py-2 px-3 border-b-2 border-transparent text-slate-500 hover:text-slate-700 transition-all whitespace-nowrap">
               AI Coding Helper
             </button>
-            <button data-project="logistics" class="project-tab text-xs font-bold py-2 px-3 border-b-2 border-transparent transition-all whitespace-nowrap">
+            <button data-project="logistics" class="project-tab text-xs font-bold py-2 px-3 border-b-2 border-transparent text-slate-500 hover:text-slate-700 transition-all whitespace-nowrap">
               Logistics Optimization
             </button>
           </div>
           <div>
-            <h3 id="project-title" class="text-sm font-bold text-slate-900 mb-1"></h3>
-            <p id="project-company" class="text-[10px] font-semibold text-sky-600 tracking-wide uppercase mb-3"></p>
-            <p id="project-desc" class="text-xs text-slate-600 leading-relaxed mb-4"></p>
+            <h3 id="project-title" class="text-sm font-bold text-slate-900 mb-1">Automated Audit Data Pipeline</h3>
+            <p id="project-company" class="text-[10px] font-semibold text-sky-600 tracking-wide uppercase mb-3">BizData Analytics Solutions Inc.</p>
+            <p id="project-desc" class="text-xs text-slate-600 leading-relaxed mb-4">Architected cloud ELT pipeline mapping multi-source financial structures. Built Python models in Databricks using PySpark, reducing nightly processing runtime by 25% and automating direct updates into Azure Synapse database warehouses.</p>
           </div>
         </div>
         <div>
           <div class="text-[10px] uppercase font-bold text-slate-400 mb-2">Technologies Used</div>
-          <div id="project-badges" class="flex flex-wrap gap-2"></div>
+          <div id="project-badges" class="flex flex-wrap gap-2">
+            <span class="badge bg-sky-50 text-sky-700 border border-sky-100">Azure Data Factory</span>
+            <span class="badge bg-sky-50 text-sky-700 border border-sky-100">Azure Databricks</span>
+            <span class="badge bg-sky-50 text-sky-700 border border-sky-100">PySpark</span>
+            <span class="badge bg-sky-50 text-sky-700 border border-sky-100">Synapse</span>
+          </div>
         </div>
       </div>
 
@@ -248,11 +254,11 @@
             </button>
             <span id="copy-feedback" class="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-slate-800 text-[10px] text-sky-400 py-1 px-3 rounded-lg border border-slate-700 hidden">Copied!</span>
           </div>
-          <span class="text-xs text-slate-500 font-semibold tracking-wider font-mono select-all">qi.binbin@outlook.com</span>
+          <span class="text-xs text-slate-300 font-semibold tracking-wider font-mono select-all">qi.binbin@outlook.com</span>
         </div>
       </div>
 
-    </div>
+    </main>
     
     <!-- Footer Copyright -->
     <footer class="text-center mt-12 text-slate-400 text-xs">
