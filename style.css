@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
 body {
   font-family: 'Inter', sans-serif;
   background-color: #f8fafc; /* slate-50 */
@@ -21,6 +19,11 @@ body {
 }
 
 /* Scrollbar styling for experience panel */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
 .custom-scrollbar::-webkit-scrollbar {
   width: 6px;
 }
@@ -52,4 +55,13 @@ body {
 .accordion-content.open {
   max-height: 600px;
   transition: max-height 0.5s ease-in;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
 }
