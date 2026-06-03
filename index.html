@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Becky Qi | BI Developer & Data Engineer Portfolio</title>
+  <!-- Google Font Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              primary: '#0f172a',
+              accent: '#0284c7'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Custom Style sheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-6xl mx-auto">
+    
+    <!-- Top Navbar Navigation -->
+    <nav class="flex justify-between items-center mb-8 bg-white border border-slate-200 py-3 px-6 rounded-2xl shadow-sm">
+      <div class="flex items-center space-x-2">
+        <span class="w-3 h-3 bg-sky-600 rounded-full animate-ping"></span>
+        <span class="font-bold text-slate-800 text-sm tracking-wide">BECKY QI // PROFILE</span>
+      </div>
+      <a href="resume.html" target="_blank" class="text-xs bg-slate-900 text-white font-semibold py-2 px-4 rounded-xl hover:bg-sky-600 transition-colors">
+        View Raw Resume
+      </a>
+    </nav>
+
+    <!-- Bento Box Main Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      
+      <!-- CARD 1: HERO/PROFILE (col-span-1 md:col-span-2 lg:col-span-3, row-span-2) -->
+      <div class="bento-card p-6 lg:p-8 col-span-1 md:col-span-2 lg:col-span-3 flex flex-col justify-between min-h-[300px]">
+        <div>
+          <div class="flex items-center space-x-4 mb-4">
+            <div class="w-12 h-12 bg-sky-100 rounded-2xl flex items-center justify-center text-sky-600 font-extrabold text-xl">BQ</div>
+            <div>
+              <h1 class="text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight">Becky Qi</h1>
+              <p class="text-sm font-semibold text-sky-600 tracking-wider uppercase mt-0.5">BI Developer & Data Engineer</p>
+            </div>
+          </div>
+          <p class="text-slate-600 text-sm lg:text-base leading-relaxed mb-6">
+            Data-driven professional with over 4 years of experience specializing in architecting end-to-end data pipelines and analytical solutions. Expert at bridging traditional Microsoft BI platforms (SQL Server, SSIS, SSAS, SSRS) with Azure Cloud Engineering (Azure Data Factory, Databricks, Synapse) and advanced AI assistance (LLMs, GitHub Copilot) to optimize operational efficiency and deliver high-impact insights.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <a href="mailto:qi.binbin@outlook.com" class="text-xs bg-sky-600 hover:bg-sky-700 text-white font-bold py-2.5 px-5 rounded-xl transition-all shadow-sm">
+            Get in Touch
+          </a>
+          <a href="https://linkedin.com/in/becky-qi-bi" target="_blank" rel="noopener noreferrer" class="text-xs border border-slate-200 text-slate-700 hover:bg-slate-50 font-semibold py-2.5 px-5 rounded-xl transition-all">
+            LinkedIn
+          </a>
+          <a href="https://github.com/beckyqi-data" target="_blank" rel="noopener noreferrer" class="text-xs border border-slate-200 text-slate-700 hover:bg-slate-50 font-semibold py-2.5 px-5 rounded-xl transition-all">
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- CARD 2: QUICK STATS (col-span-1) -->
+      <div class="bento-card p-6 flex flex-col justify-between col-span-1 bg-slate-900 text-white">
+        <div class="text-xs uppercase tracking-widest text-slate-400 font-bold mb-4">Core Metrics</div>
+        <div class="space-y-4">
+          <div>
+            <div class="text-3xl lg:text-4xl font-extrabold text-sky-400">4+</div>
+            <div class="text-[10px] text-slate-300 uppercase font-semibold mt-1">Years BI Experience</div>
+          </div>
+          <div>
+            <div class="text-3xl lg:text-4xl font-extrabold text-sky-400">25%</div>
+            <div class="text-[10px] text-slate-300 uppercase font-semibold mt-1">AI Speed Efficiency</div>
+          </div>
+          <div>
+            <div class="text-3xl lg:text-4xl font-extrabold text-sky-400">40%</div>
+            <div class="text-[10px] text-slate-300 uppercase font-semibold mt-1">Pipeline Resolution Speedup</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3: INTERACTIVE SKILLS (col-span-1 md:col-span-2) -->
+      <div class="bento-card p-6 col-span-1 md:col-span-2 flex flex-col min-h-[380px]">
+        <h2 class="text-base font-bold text-slate-900 mb-4 tracking-tight flex items-center">
+          <span class="w-2.5 h-2.5 bg-sky-600 rounded-full mr-2"></span>
+          Technical Skills Dashboard
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 flex-1">
+          <!-- Left Category Selectors -->
+          <div class="sm:col-span-1 flex sm:flex-col gap-2 overflow-x-auto sm:overflow-x-visible pb-2 sm:pb-0">
+            <button data-category="ai" class="skill-tab text-left text-xs bg-sky-600 text-white font-bold p-3 rounded-xl transition-all whitespace-nowrap">
+              AI & Tools
+            </button>
+            <button data-category="cloud" class="skill-tab text-left text-xs text-slate-600 hover:bg-slate-100 font-semibold p-3 rounded-xl transition-all whitespace-nowrap">
+              Cloud Data
+            </button>
+            <button data-category="bi" class="skill-tab text-left text-xs text-slate-600 hover:bg-slate-100 font-semibold p-3 rounded-xl transition-all whitespace-nowrap">
+              BI Analytics
+            </button>
+            <button data-category="scripting" class="skill-tab text-left text-xs text-slate-600 hover:bg-slate-100 font-semibold p-3 rounded-xl transition-all whitespace-nowrap">
+              Scripting
+            </button>
+          </div>
+          <!-- Right Chart Container -->
+          <div class="sm:col-span-2 relative min-h-[220px] bg-slate-50 border border-slate-200 rounded-xl p-3">
+            <canvas id="skillsChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 4: EDUCATION & CERTIFICATIONS (col-span-1 md:col-span-2) -->
+      <div class="bento-card p-6 col-span-1 md:col-span-2 flex flex-col justify-between">
+        <div>
+          <h2 class="text-base font-bold text-slate-900 mb-4 tracking-tight flex items-center">
+            <span class="w-2.5 h-2.5 bg-sky-600 rounded-full mr-2"></span>
+            Education & Certifications
+          </h2>
+          <div class="space-y-4">
+            <div>
+              <div class="text-xs font-bold text-slate-800">Master of Science in Applied Mathematics</div>
+              <div class="text-[11px] text-slate-500">Queens College, City University of New York (CUNY) // USA</div>
+            </div>
+            <div>
+              <div class="text-xs font-bold text-slate-800">Graduate Certificate in Marketing Research & Analytics</div>
+              <div class="text-[11px] text-slate-500">Centennial College // Toronto, ON</div>
+            </div>
+            <div>
+              <div class="text-xs font-bold text-slate-800">Bachelor of Science in Electrical Engineering</div>
+              <div class="text-[11px] text-slate-500">HLJ Science and Technology University // China</div>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-slate-200 pt-4 mt-4 flex items-center space-x-2">
+          <span class="badge bg-green-50 text-green-700 border border-green-100">SAS Certified Advanced</span>
+          <span class="badge bg-green-50 text-green-700 border border-green-100">SAS Certified Base</span>
+        </div>
+      </div>
+
+      <!-- CARD 5: EXPERIENCE JOURNEY (col-span-1 md:col-span-2, row-span-3) -->
+      <div class="bento-card p-6 col-span-1 md:col-span-2 flex flex-col min-h-[450px]">
+        <h2 class="text-base font-bold text-slate-900 mb-4 tracking-tight flex items-center">
+          <span class="w-2.5 h-2.5 bg-sky-600 rounded-full mr-2"></span>
+          Professional Journey (Interactive)
+        </h2>
+        <div class="space-y-4 flex-1 overflow-y-auto custom-scrollbar pr-2">
+          
+          <!-- Job 1 -->
+          <div class="border border-slate-200 rounded-2xl overflow-hidden bg-white">
+            <button class="accordion-header w-full text-left p-4 flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <div>
+                <h3 class="text-sm font-bold text-slate-900">BI Developer</h3>
+                <p class="text-xs text-sky-600 font-semibold mt-0.5">BizData Analytics Solutions Inc. // May 2024 – Present</p>
+              </div>
+              <svg class="accordion-icon w-4 h-4 text-slate-500 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="accordion-content">
+              <div class="p-4 border-t border-slate-100">
+                <ul class="list-disc pl-4 text-xs text-slate-600 space-y-2">
+                  <li><strong>AI-Accelerated Development:</strong> Integrated GPT models and GitHub Copilot to automate PySpark & T-SQL script generation, speeding up project delivery by 25%.</li>
+                  <li><strong>Cloud Pipelines:</strong> Orchestrated cloud ELT integrations using Azure Data Factory, Azure Databricks, and PySpark to transform data into Azure Synapse and SQL Warehouses.</li>
+                  <li><strong>RDBMS Engineering:</strong> Optimized 50+ database procedures and indexes in SSMS, reducing latency by 30%.</li>
+                  <li><strong>Enterprise Modeling:</strong> Generated high-performance SSAS OLAP cubes using dimensional Star/Snowflake schemas.</li>
+                  <li><strong>Visualization:</strong> Designed high-adoption Power BI & Tableau dashboards with advanced DAX and Time Intelligence.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Job 2 -->
+          <div class="border border-slate-200 rounded-2xl overflow-hidden bg-white">
+            <button class="accordion-header w-full text-left p-4 flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+              <div>
+                <h3 class="text-sm font-bold text-slate-900">Data Analyst</h3>
+                <p class="text-xs text-sky-600 font-semibold mt-0.5">Samuel, Son & Co., Limited // Mar. 2021 – Mar. 2024</p>
+              </div>
+              <svg class="accordion-icon w-4 h-4 text-slate-500 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="accordion-content">
+              <div class="p-4 border-t border-slate-100">
+                <ul class="list-disc pl-4 text-xs text-slate-600 space-y-2">
+                  <li><strong>Automations:</strong> Wrote custom Shell and VBA scripts to parse operational logs, saving 10+ hours per week of manual validation.</li>
+                  <li><strong>Statistical Modeling:</strong> Utilized Python (Pandas, NumPy) and SAS/STAT to segment client databases and pinpoint logistics inefficiencies.</li>
+                  <li><strong>Reporting:</strong> Developed corporate performance scorecards and parameterized reports in Power BI and SSRS.</li>
+                  <li><strong>Tuning:</strong> Optimized query structures for reporting databases, improving load speed by 25%.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CARD 6: PROJECTS SPOTLIGHT (col-span-1 md:col-span-2, row-span-2) -->
+      <div class="bento-card p-6 col-span-1 md:col-span-2 flex flex-col justify-between min-h-[300px]">
+        <div>
+          <h2 class="text-base font-bold text-slate-900 mb-4 tracking-tight flex items-center">
+            <span class="w-2.5 h-2.5 bg-sky-600 rounded-full mr-2"></span>
+            Featured Project Spotlight
+          </h2>
+          <div class="flex border-b border-slate-200 mb-4 overflow-x-auto pb-1">
+            <button data-project="audit" class="project-tab text-xs font-bold py-2 px-3 border-b-2 border-transparent transition-all whitespace-nowrap">
+              Audit Pipeline
+            </button>
+            <button data-project="aiHub" class="project-tab text-xs font-bold py-2 px-3 border-b-2 border-transparent transition-all whitespace-nowrap">
+              AI Coding Helper
+            </button>
+            <button data-project="logistics" class="project-tab text-xs font-bold py-2 px-3 border-b-2 border-transparent transition-all whitespace-nowrap">
+              Logistics Optimization
+            </button>
+          </div>
+          <div>
+            <h3 id="project-title" class="text-sm font-bold text-slate-900 mb-1"></h3>
+            <p id="project-company" class="text-[10px] font-semibold text-sky-600 tracking-wide uppercase mb-3"></p>
+            <p id="project-desc" class="text-xs text-slate-600 leading-relaxed mb-4"></p>
+          </div>
+        </div>
+        <div>
+          <div class="text-[10px] uppercase font-bold text-slate-400 mb-2">Technologies Used</div>
+          <div id="project-badges" class="flex flex-wrap gap-2"></div>
+        </div>
+      </div>
+
+      <!-- CARD 7: CONTACT / EMAIL FOOTER (col-span-1 md:col-span-3 lg:col-span-4) -->
+      <div class="bento-card p-6 col-span-1 md:col-span-3 lg:col-span-4 flex flex-col sm:flex-row items-center justify-between bg-slate-900 text-white min-h-[100px]">
+        <div class="mb-4 sm:mb-0 text-center sm:text-left">
+          <h2 class="text-base font-extrabold">Ready to build data-driven solutions?</h2>
+          <p class="text-slate-400 text-xs mt-1">Let's discuss dashboards, ETL pipelines, or AI automations.</p>
+        </div>
+        <div class="flex items-center space-x-4">
+          <div class="relative">
+            <button id="copy-email-btn" class="text-xs bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-sm flex items-center space-x-2">
+              <span>Copy Email</span>
+            </button>
+            <span id="copy-feedback" class="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-slate-800 text-[10px] text-sky-400 py-1 px-3 rounded-lg border border-slate-700 hidden">Copied!</span>
+          </div>
+          <span class="text-xs text-slate-500 font-semibold tracking-wider font-mono select-all">qi.binbin@outlook.com</span>
+        </div>
+      </div>
+
+    </div>
+    
+    <!-- Footer Copyright -->
+    <footer class="text-center mt-12 text-slate-400 text-xs">
+      <p>&copy; 2026 Becky Qi. Made with HTML5, Tailwind CSS, & Vanilla JS.</p>
+    </footer>
+
+  </div>
+
+  <!-- Interactive script loading -->
+  <script src="app.js"></script>
+</body>
+</html>
