@@ -6,7 +6,261 @@
   <title>Becky Qi - Resume</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* CSS will be added here in Task 3 */
+    :root {
+      --primary-color: #0f172a; /* Slate 900 */
+      --accent-color: #0284c7;  /* Sky 600 */
+      --text-main: #334155;    /* Slate 700 */
+      --text-dark: #0f172a;    /* Slate 900 */
+      --bg-light: #f8fafc;     /* Slate 50 */
+      --border-color: #e2e8f0; /* Slate 200 */
+      --sidebar-bg: #f1f5f9;   /* Slate 100 */
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-main);
+      background-color: #ffffff;
+      line-height: 1.6;
+      font-size: 14px;
+      -webkit-print-color-adjust: exact;
+    }
+
+    .resume-container {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      min-height: 100vh;
+      max-width: 1000px;
+      margin: 0 auto;
+      border-left: 1px solid var(--border-color);
+      border-right: 1px solid var(--border-color);
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    }
+
+    /* Left Column (Sidebar) */
+    .sidebar {
+      background-color: var(--sidebar-bg);
+      padding: 2.5rem 1.5rem;
+      border-right: 1px solid var(--border-color);
+    }
+
+    .sidebar-section {
+      margin-bottom: 2rem;
+    }
+
+    .sidebar-section h2 {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 0.3rem;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .contact-info p {
+      margin: 0.4rem 0;
+      font-size: 0.85rem;
+      word-break: break-all;
+    }
+
+    .contact-info a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    .skills-section h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      color: var(--accent-color);
+      margin-top: 1rem;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+    }
+
+    .skills-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .skills-section li {
+      font-size: 0.85rem;
+      padding: 0.2rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.03);
+      color: var(--text-dark);
+    }
+
+    .edu-item {
+      margin-bottom: 0.8rem;
+    }
+
+    .edu-degree {
+      font-weight: 600;
+      color: var(--text-dark);
+      font-size: 0.85rem;
+      margin: 0 0 0.1rem 0;
+      line-height: 1.3;
+    }
+
+    .edu-school {
+      font-size: 0.8rem;
+      margin: 0;
+      color: var(--text-main);
+    }
+
+    .certifications-section ul {
+      padding-left: 1rem;
+      margin: 0;
+      font-size: 0.85rem;
+    }
+
+    .certifications-section li {
+      margin-bottom: 0.4rem;
+      color: var(--text-dark);
+    }
+
+    /* Right Column (Main Content) */
+    .main-content {
+      padding: 3rem 2.5rem;
+    }
+
+    .resume-header {
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .candidate-name {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--primary-color);
+      margin: 0;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+
+    .candidate-title {
+      font-size: 1.2rem;
+      color: var(--accent-color);
+      margin: 0.3rem 0 0 0;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+
+    .main-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary-color);
+      border-bottom: 1px solid var(--primary-color);
+      padding-bottom: 0.4rem;
+      margin-top: 0;
+      margin-bottom: 1.2rem;
+      font-weight: 700;
+    }
+
+    .summary-section p {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      margin: 0;
+      text-align: justify;
+    }
+
+    .job-item {
+      margin-bottom: 2rem;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.2rem;
+    }
+
+    .job-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin: 0;
+    }
+
+    .job-date {
+      font-size: 0.85rem;
+      color: var(--accent-color);
+      font-weight: 600;
+    }
+
+    .job-company {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--text-main);
+      margin-bottom: 0.6rem;
+      font-weight: 500;
+    }
+
+    .job-bullets {
+      margin: 0;
+      padding-left: 1.25rem;
+      font-size: 0.88rem;
+    }
+
+    .job-bullets li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* PRINT STYLE BLOCK */
+    @media print {
+      body {
+        background-color: #ffffff;
+        color: #000000;
+        font-size: 11pt;
+      }
+      .resume-container {
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        box-shadow: none;
+        border: none;
+        max-width: 100%;
+        margin: 0;
+        min-height: auto;
+      }
+      .sidebar {
+        background-color: #f8fafc !important;
+        padding: 1.5rem 1rem;
+        border-right: 1px solid #cbd5e1;
+      }
+      .main-content {
+        padding: 1.5rem 1.5rem;
+      }
+      .candidate-name {
+        font-size: 24pt;
+      }
+      .candidate-title {
+        font-size: 13pt;
+      }
+      .job-title {
+        font-size: 11pt;
+      }
+      .job-bullets {
+        font-size: 9.5pt;
+      }
+      a {
+        text-decoration: none;
+        color: #000000;
+      }
+    }
   </style>
 </head>
 <body>
