@@ -153,8 +153,12 @@ function initProjects() {
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('border-sky-600', 'text-sky-600'));
+      tabs.forEach(t => {
+        t.classList.remove('border-sky-600', 'text-sky-600');
+        t.classList.add('border-transparent', 'text-slate-500', 'hover:text-slate-700');
+      });
       tab.classList.add('border-sky-600', 'text-sky-600');
+      tab.classList.remove('border-transparent', 'text-slate-500', 'hover:text-slate-700');
 
       const projKey = tab.dataset.project;
       const project = projects[projKey];
@@ -217,8 +221,12 @@ document.addEventListener('DOMContentLoaded', () => {
   if (skillTabs && skillTabs.length > 0) {
     skillTabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        skillTabs.forEach(t => t.classList.remove('bg-sky-600', 'text-white'));
+        skillTabs.forEach(t => {
+          t.classList.remove('bg-sky-600', 'text-white');
+          t.classList.add('text-slate-600', 'hover:bg-slate-100', 'font-semibold');
+        });
         tab.classList.add('bg-sky-600', 'text-white');
+        tab.classList.remove('text-slate-600', 'hover:bg-slate-100', 'font-semibold');
         renderChart(tab.dataset.category);
       });
     });
