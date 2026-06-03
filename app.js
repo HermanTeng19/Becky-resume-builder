@@ -27,8 +27,11 @@ const skillCategories = {
 let skillChart = null;
 
 function renderChart(categoryKey) {
-  const ctx = document.getElementById('skillsChart').getContext('2d');
+  const canvas = document.getElementById('skillsChart');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
   const chartData = skillCategories[categoryKey];
+  if (!chartData) return;
 
   // Destroy existing chart if it exists
   if (skillChart) {
@@ -81,6 +84,8 @@ function renderChart(categoryKey) {
 // 2. Timeline Accordion Trigger
 function initTimeline() {
   const headers = document.querySelectorAll('.accordion-header');
+  if (!headers || headers.length === 0) return;
+
   headers.forEach(header => {
     header.addEventListener('click', () => {
       const content = header.nextElementSibling;
@@ -94,18 +99,22 @@ function initTimeline() {
         }
       });
       document.querySelectorAll('.accordion-icon').forEach(i => {
-        if (i !== icon) i.style.transform = 'rotate(0deg)';
+        if (i !== icon) {
+          i.style.transform = 'rotate(0deg)';
+        }
       });
 
       // Toggle self
-      if (content.classList.contains('open')) {
-        content.classList.remove('open');
-        content.style.maxHeight = null;
-        icon.style.transform = 'rotate(0deg)';
-      } else {
-        content.classList.add('open');
-        content.style.maxHeight = content.scrollHeight + "px";
-        icon.style.transform = 'rotate(180deg)';
+      if (content) {
+        if (content.classList.contains('open')) {
+          content.classList.remove('open');
+          content.style.maxHeight = null;
+          if (icon) icon.style.transform = 'rotate(0deg)';
+        } else {
+          content.classList.add('open');
+          content.style.maxHeight = content.scrollHeight + "px";
+          if (icon) icon.style.transform = 'rotate(180deg)';
+        }
       }
     });
   });
@@ -140,6 +149,8 @@ const projects = {
 
 function initProjects() {
   const tabs = document.querySelectorAll('.project-tab');
+  if (!tabs || tabs.length === 0) return;
+
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       tabs.forEach(t => t.classList.remove('border-sky-600', 'text-sky-600'));
@@ -147,20 +158,28 @@ function initProjects() {
 
       const projKey = tab.dataset.project;
       const project = projects[projKey];
+      if (!project) return;
 
-      document.getElementById('project-title').textContent = project.title;
-      document.getElementById('project-company').textContent = project.company;
-      document.getElementById('project-desc').textContent = project.desc;
+      const titleEl = document.getElementById('project-title');
+      if (titleEl) titleEl.textContent = project.title;
+
+      const companyEl = document.getElementById('project-company');
+      if (companyEl) companyEl.textContent = project.company;
+
+      const descEl = document.getElementById('project-desc');
+      if (descEl) descEl.textContent = project.desc;
 
       // Render tech badges
       const badgeContainer = document.getElementById('project-badges');
-      badgeContainer.innerHTML = '';
-      project.tech.forEach(t => {
-        const span = document.createElement('span');
-        span.className = 'badge bg-sky-50 text-sky-700 border border-sky-100';
-        span.textContent = t;
-        badgeContainer.appendChild(span);
-      });
+      if (badgeContainer) {
+        badgeContainer.innerHTML = '';
+        project.tech.forEach(t => {
+          const span = document.createElement('span');
+          span.className = 'badge bg-sky-50 text-sky-700 border border-sky-100';
+          span.textContent = t;
+          badgeContainer.appendChild(span);
+        });
+      }
     });
   });
 
@@ -175,11 +194,18 @@ function initEmailClipboard() {
   const copyBtn = document.getElementById('copy-email-btn');
   if (copyBtn) {
     copyBtn.addEventListener('click', () => {
-      navigator.clipboard.writeText('qi.binbin@outlook.com');
-      const feedback = document.getElementById('copy-feedback');
-      feedback.textContent = 'Copied!';
-      feedback.classList.remove('hidden');
-      setTimeout(() => feedback.classList.add('hidden'), 2000);
+      navigator.clipboard.writeText('qi.binbin@outlook.com')
+        .then(() => {
+          const feedback = document.getElementById('copy-feedback');
+          if (feedback) {
+            feedback.textContent = 'Copied!';
+            feedback.classList.remove('hidden');
+            setTimeout(() => feedback.classList.add('hidden'), 2000);
+          }
+        })
+        .catch(err => {
+          console.error('Failed to copy email: ', err);
+        });
     });
   }
 }
@@ -188,13 +214,15 @@ function initEmailClipboard() {
 document.addEventListener('DOMContentLoaded', () => {
   // Skills Tab triggers
   const skillTabs = document.querySelectorAll('.skill-tab');
-  skillTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      skillTabs.forEach(t => t.classList.remove('bg-sky-600', 'text-white'));
-      tab.classList.add('bg-sky-600', 'text-white');
-      renderChart(tab.dataset.category);
+  if (skillTabs && skillTabs.length > 0) {
+    skillTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        skillTabs.forEach(t => t.classList.remove('bg-sky-600', 'text-white'));
+        tab.classList.add('bg-sky-600', 'text-white');
+        renderChart(tab.dataset.category);
+      });
     });
-  });
+  }
 
   // Default chart category loaded
   renderChart('ai');
