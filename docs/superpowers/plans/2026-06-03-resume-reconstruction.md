@@ -35,8 +35,6 @@
       <li>Azure Databricks</li>
       <li>Azure Synapse Analytics</li>
       <li>SQL Warehouses</li>
-      <li>Snowflake</li>
-      <li>Google BigQuery / Redshift</li>
     </ul>
 
     <h3>BI & Visual Analytics</h3>
@@ -56,7 +54,7 @@
 
     <h3>Methodologies</h3>
     <ul>
-      <li>Kimball Dimensional Modeling</li>
+      <li>Dimensional Modeling</li>
       <li>Star / Snowflake Schemas</li>
       <li>Performance Tuning & Indexing</li>
       <li>Git Version Control / Agile</li>
@@ -81,7 +79,7 @@
   *Professional Summary Update*:
   ```html
   <p>
-    Data-driven Business Intelligence Developer and Data Engineer with over 4 years of experience architecting, optimizing, and automating end-to-end data pipelines and analytical solutions. Specialized in utilizing the Microsoft BI stack (SSIS, SSAS, SSRS, SQL Server) and Microsoft Azure cloud solutions (Azure Data Factory, Azure Databricks, Azure Synapse, SQL Warehouses). Proficient in leveraging AI tools (LLMs, GitHub Copilot, Microsoft 365 Copilot) to accelerate script generation, optimize T-SQL queries, and automate report pipelines. Strong analytical foundation with Python (Pandas/NumPy), PySpark, VBA, Shell scripting, and Kimball dimensional modeling.
+    Data-driven Business Intelligence Developer and Data Engineer with over 4 years of experience architecting, optimizing, and automating end-to-end data pipelines and analytical solutions. Specialized in utilizing the Microsoft BI stack (SSIS, SSAS, SSRS, SQL Server) and Microsoft Azure cloud solutions (Azure Data Factory, Azure Databricks, Azure Synapse, SQL Warehouses). Proficient in leveraging AI tools (LLMs, GitHub Copilot, Microsoft 365 Copilot) to accelerate script generation, optimize T-SQL queries, and automate report pipelines. Strong analytical foundation with Python (Pandas/NumPy), PySpark, VBA, Shell scripting, and dimensional modeling.
   </p>
   ```
 
@@ -91,7 +89,7 @@
     <li><strong>AI-Accelerated Development:</strong> Integrated LLMs (GPT, Claude, Gemini) and GitHub Copilot to automate PySpark and T-SQL script generation and expedite query tuning, accelerating development velocity and project delivery by 25%.</li>
     <li><strong>Cloud Data Engineering:</strong> Architected and orchestrated scalable cloud data ingestion and ELT pipelines utilizing Azure Data Factory, Azure Databricks, and PySpark to load and transform enterprise datasets into Azure Synapse Analytics and SQL Warehouses.</li>
     <li><strong>Database Optimization & Modeling:</strong> Architected and tuned SQL Server database objects, optimizing stored procedures, triggers, views, and indexes in SSMS to reduce query latency by 30% and support transactional (OLTP) environments.</li>
-    <li><strong>Dimensional Data Warehousing:</strong> Built enterprise data warehouses utilizing Kimball dimensional modeling (Star and Snowflake schemas), migrating legacy history and generating high-performance OLAP cubes in SSAS.</li>
+    <li><strong>Dimensional Data Warehousing:</strong> Built enterprise data warehouses utilizing dimensional modeling (Star and Snowflake schemas), migrating legacy history and generating high-performance OLAP cubes in SSAS.</li>
     <li><strong>Visual Analytics & Copilot:</strong> Developed high-adoption interactive dashboards and executive scorecards using Power BI and Tableau, leveraging advanced DAX, Time Intelligence, and Microsoft 365 Copilot to synthesize audit narratives.</li>
     <li><strong>Advanced Analytics Integration:</strong> Collaborated with data scientists to perform feature engineering, data imputation, and statistical modeling (segmentation, churn analysis) to support classification and predictive models.</li>
     <li><strong>Orchestration & SLA Monitoring:</strong> Configured SQL Server Job Agent schedules to automate daily and weekly ETL workflows, implementing proactive alerting and root-cause analysis that reduced pipeline failure resolution times by 40%.</li>
